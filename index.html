@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  
+
+<!
+Coding Exercise Check-in: HTML Forms - Part Two
+
+TASK: In this exercise you will extend the order form for the previously defined online shop.
+Please implement the following forms:
+
+Name
+
+Surname
+
+Address
+
+E-Mail
+
+Coupon
+
+Create Account (Yes or No). Please use radioboxes for this. Make sure that you cannot select both at the same time!
+
+Order Experience (1-5). Please use a select box for this
+
+Comments.
+
+-->
+
+
+
+<form action>
+
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name"><br>
+  <label for="surname">Surname:</label><br>
+  <input type="text" id="surname" name="surname"><br>
+  <label for="address">Address:</label><br>
+  <input type="text" id="address" name="address"><br>
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email"><br>
+  <label for="coupon"> <span style="color: red">Coupon: </span></label><br>
+  <input type="text" id="coupon" name="coupon"><br>
+  
+  <p>Create an Account?</p><br>
+  
+  <label for="Yes">Yes</label>
+  <input type = "radio" id = "Yes" name = 'ac'><br>
+  <label for="No">No</label>
+  <input type = "radio" id = "No" name = 'ac'>
+  <br>
+  <br>
+  <p>How was your order Experience? (1 Awful, 5 Awesome)</p>
+  <select name = 'stars' id="">
+    <option value = '1'>1</option>
+    <option value = '2'>2</option>
+    <option value = '3'>3</option>
+    <option value = '4'>4</option>
+    <option value = '5'>5</option>
+  </select>
+  
+
+  <br>
+  <br
+  <p>Any other comments?</p>
+  <textarea name = 'comments' id = 'comments' cols = '30' rows = '10'>
+  </textarea> <br><br>
+  <input type="submit" value="Submit">
+
+
+<!--
+  TASK: Create a class called  divClass and an ID called divId.
+
+  Then define divClass to have red text color and divId to have blue text color
+
+  Please fill HTML file "index.html" in such a way that it contains at least two divs, where the first div makes use of divClass and the second div makes use of divId!
+  As usual, please also create the HTML header. Don't forget to add the CSS file.
+
+  Before moving on,  check what happens if you embed a div container which uses divId into the div container which uses divClass.
+
+  div class="divClass"> One div element
+          div id="divId"> Another div element inside the first div element div>
+
+//-->
+
+<div class="divClass">
+  <p> div classs wahtever</p>
+</div>
+<div id='divId'>
+  <p> yes offcourse</p>
+</div>
+
+
+<!--
+  TASK:
+
+  Fill "styling.css" such that all h1 headings use Arial ,all paragraphs have font size 1.
+
+  Additionally create an id called small to reduce the font size to 0.5.
+
+  Fill "index.html", such that it contains at least one h1 heading, one paragraph and some text to which you apply small (please use a div container).
+
+
+  As usual, please also create the HTML header. Don't forget to add the CSS file.
+
+-->
+
+<div id='small'>
+  Id div
+</div>
+
+<h1>
+
+  This is a heading 
+</h1>
+<p>
+  Hello paragraph!
+</p>
+
+
+<!--
+  TASK:
+
+  Use the box model to create a box which has a 5px wide solid green border and contains the centered word "CENTRAL" .
+
+  The box should have a distance of 50 px to all page-borders (or to be more precise, to the div element).
+
+
+  As usual, please also create the HTML header. Don't forget to add the CSS file.
+  --> 
+
+  <h1 id = "central">CENTRAL</h1>
