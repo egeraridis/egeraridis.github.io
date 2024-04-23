@@ -1,0 +1,41 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  border-color: white; /* Set the color of the lines */
+}
+
+.custom-toggler .navbar-toggler {
+  border-color: white; /* Set the color of the border */
+}
+.section {
+  min-height: calc(100vh - 1000px); /* Set a minimum height minus the navbar height */
+  position: relative !important; /* Ensure z-index works */
+}
+
+.image-container {
+  background-image: url('OIG4.c..sT1IcpuNMjOJE6.jpeg');
+  background-repeat: repeat-y; /* Repeat the image vertically */
+  width: 100%; !important;
+}
+
+.spaceman {
+  display: block;
+  width: 100%;
+  height: auto; !important;
+}
+
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none; !important;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white; !important;
+}
