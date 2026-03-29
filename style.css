@@ -192,28 +192,24 @@
     h1{font-size:1.9rem;}                      
   }                                            
                                                                                                                                                                                                                                           
-  /* ================= WELCOME OVERLAY ================= */                                                                                                                                                                               
+/* ================= WELCOME OVERLAY ================= */                                                                                                                                                                               
   body.welcome-active #welcome {                                                                                                                                                                                                          
     position: fixed;                                                                                                                                                                                                                      
     top: 0;                                                                                                                                                                                                                               
-    left: 0;                                   
+    left: 0;                                                                                                                                                                                                                              
     width: 100%;                                                                                                                                                                                                                          
     height: 100vh;                                                                                                                                                                                                                        
     z-index: 9999;                                                                                                                                                                                                                        
   }                                                                                                                                                                                                                                       
                                                                                                                                                                                                                                           
-  body.welcome-active #main-content {                                                                                                                                                                                                     
-    opacity: 0;                                                                                                                                                                                                                           
-    pointer-events: none;                                                                                                                                                                                                                 
-    position: absolute;                                                                                                                                                                                                                   
-    top: 0;                                    
-    left: 0;                                                                                                                                                                                                                              
-    width: 100%;                                                                                                                                                                                                                          
-  }                                                                                                                                                                                                                                       
-                                                                                                                                                                                                                                          
-  body.welcome-dismissed #welcome {                                                                                                                                                                                                       
+  body.welcome-active #main-content {    
     opacity: 0;                                                                                                                                                                                                                           
     pointer-events: none;                
+  }
+
+  body.welcome-dismissed #welcome {
+    opacity: 0;                                
+    pointer-events: none; 
     transition: opacity 0.5s ease;                                                                                                                                                                                                        
     position: fixed;                           
   }                                                                                                                                                                                                                                       
@@ -222,14 +218,11 @@
     opacity: 1;                                                                                                                                                                                                                           
     pointer-events: auto;                                                                                                                                                                                                                 
     transition: opacity 0.5s ease 0.2s;                                                                                                                                                                                                   
-    position: relative;                                                                                                                                                                                                                   
-    top: 0;                                                                                                                                                                                                                               
-    left: 0;                                   
   }                                                                                                                                                                                                                                       
                                                                                                                                                                                                                                           
   #welcome {                                                                                                                                                                                                                              
     transition: opacity 0.5s ease;                                                                                                                                                                                                        
-    margin: 0;                           
+    margin: 0;                                                                                                                                                                                                                            
     padding: 0;                                                                                                                                                                                                                           
   }                                            
                                                                                                                                                                                                                                           
@@ -237,10 +230,91 @@
     overflow: hidden;                                                                                                                                                                                                                     
     position: fixed;                                                                                                                                                                                                                      
     width: 100%;                                                                                                                                                                                                                          
+  }                                            
+                                                                                                                                                                                                                                          
+  body.welcome-dismissed {                                                                                                                                                                                                                
+    overflow-y: auto;                                                                                                                                                                                                                     
+    position: relative;                                                                                                                                                                                                                   
+    width: 100%;                                                                                                                                                                                                                          
+  }                                            
+                                                                                                                                                                                                                                          
+  /* ================= MOBILE RESPONSIVE ================= */                                                                                                                                                                             
+  html, body {                                 
+    max-width: 100%;                                                                                                                                                                                                                      
+    overflow-x: hidden;                                                                                                                                                                                                                   
+    margin: 0;                                 
+    padding: 0;                                                                                                                                                                                                                           
+  }                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                          
+  #main-content {                                                                                                                                                                                                                         
+    max-width: 100%;                                                                                                                                                                                                                      
+    overflow-x: hidden;                                                                                                                                                                                                                   
+    width: 100%;                                                                                                                                                                                                                          
+    box-sizing: border-box;              
+  }                                                                                                                                                                                                                                       
+                                               
+  .container {                                                                                                                                                                                                                            
+    max-width: 100% !important;                                                                                                                                                                                                           
+    padding-left: 15px !important;                                                                                                                                                                                                        
+    padding-right: 15px !important;                                                                                                                                                                                                       
+    box-sizing: border-box;                    
+  }                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                          
+  .glass-card {                                                                                                                                                                                                                           
+    max-width: 100% !important;                                                                                                                                                                                                           
+    width: 100% !important;                                                                                                                                                                                                               
+    overflow-x: hidden;                                                                                                                                                                                                                   
+    box-sizing: border-box;                    
+    margin-left: auto;                                                                                                                                                                                                                    
+    margin-right: auto;                                                                                                                                                                                                                   
+  }                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                          
+  .hero-glass {                                                                                                                                                                                                                           
+    max-width: 95% !important;                                                                                                                                                                                                            
+    width: 100% !important;                                                                                                                                                                                                               
+    box-sizing: border-box;                                                                                                                                                                                                               
+    margin: 0 auto;                            
+  }                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                          
+  /* Prevent elements from causing horizontal scroll */                                                                                                                                                                                   
+  * {                                                                                                                                                                                                                                     
+    max-width: 100%;                                                                                                                                                                                                                      
+    box-sizing: border-box;                                                                                                                                                                                                               
   }                                      
                                                                                                                                                                                                                                           
-  body.welcome-dismissed {               
-    overflow-y: auto;                                                                                                                                                                                                                     
-    position: relative;   
-  }                                                                                                                                                                                                                                       
-      
+  /* Mobile-specific adjustments */      
+  @media (max-width: 768px) {                                                                                                                                                                                                             
+    .container {                         
+      padding-left: 10px !important;                                                                                                                                                                                                      
+      padding-right: 10px !important;    
+    }                                                                                                                                                                                                                                     
+                                               
+    .glass-card {                                                                                                                                                                                                                         
+      padding: 20px !important;                                                                                                                                                                                                           
+      margin: 0 5px;                                                                                                                                                                                                                      
+    }                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                          
+    .hero-glass {                                                                                                                                                                                                                         
+      padding: 15px !important;                                                                                                                                                                                                           
+      margin: 0 5px;                                                                                                                                                                                                                      
+    }                                                                                                                                                                                                                                     
+                                               
+    .welcome-glass {                                                                                                                                                                                                                      
+      padding: 30px 15px !important;                                                                                                                                                                                                      
+      margin: 0 10px;                                                                                                                                                                                                                     
+      max-width: 90%;                                                                                                                                                                                                                     
+    }                                          
+                                                                                                                                                                                                                                          
+    .display-4 {                                                                                                                                                                                                                          
+      font-size: 1.8rem !important;                                                                                                                                                                                                       
+    }                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                          
+    .display-5 {                               
+      font-size: 1.5rem !important;                                                                                                                                                                                                       
+    }                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                          
+    .btn-glass {                                                                                                                                                                                                                          
+      padding: 8px 16px !important;                                                                                                                                                                                                       
+      font-size: 0.9rem;  
+    }                                                                                                                                                                                                                                     
+  }                                            
