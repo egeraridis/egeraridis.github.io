@@ -28,7 +28,7 @@ hr{border-color:rgba(255,255,255,0.2);}
 /* ================= WELCOME PAGE ================= */
 .welcome-section{
   height:100vh;
-  background:url('https://lh3.googleusercontent.com/pw/AP1GczNBp5zWFPeNrFky4ZT9YzZpGSiECdwGibkdYUODGlogvlnbZwwwl0RlUiXAPUC4xjPh3n_HY2rjZ5HcriOLdgKeM-XX0MKtWuVEh5xGLE7KLT5Q21Rs5NfZ16KjRvNYAT0v_QMeejOmXKUNpCTe5eNPISscfbCEI1Rz9YZa-9tPZMPaOX3g2CcRGH_byLql7gAXrNIZZjoXqlJf3z-XWLrLDnwajlmDffZVq4ev-l17Y6CW_VCOpkJD65B_Oz6R7YEwqQWcTjMNrO_613wvJT4LUP8p7Q3NupgSqpXEiDUNdbGhikEbF6uxM6Gpr56DU8gQT3e7AZ9uy-v215U74yBAK8JsK5yhR50eSG0oXpgILJ2yuDdZB23QGdNkghn5KF5wTYHyHbOYe_RccTLmeqUdJlCncTuM5bsmQFaH-qnCVUHMFKFyhz6ZTQbGV3pLFhHjfva8nAh5vN6PVBIMBROBA1uUYdO9AMv00JYBjPumy0myEAPTmwjFu4msg4CPtXMQmsK7oEi080l9l6g7emTpPYSGgOhp8h5Kp1TBXO57hAzgNxMEbwQdHGa8i415rLOXmRoGoRzBrwXhNAI3AeozgZyi5KTbkyVOv54rXVb_iw2TzIhg9NuWvvcAtP_Jmw5cDAWNrliDAjlwhAc6VbJaa7N9VYYYJmff3TwQG3M7Am9NR00HyZNg4YAe18PNvVHLLEKWdwlftxl2s9zetZd5JvZ47TSzqrwDzXUx__fljVSyE2SVQ4xU2JUDy_K-kUW_Wx0GHXtzlhRjIXqW9xBIhkL_oSz62XXbrHGCoZaDFYP6gRnDQQGq2DxCbV0v4n9bm62XIysnuxZgMlkt5SGgMSyuEYt8ifDKvtVrl_FwFsdVyU5W-Z6PRhPcOFxxzM0FogbRRQeIo-F_GPo5QyEeio8H_ZV6eFRCNrZmGFaSdYFEV9w1cA=w1406-h1874-s-no?authuser=0') center/cover no-repeat;
+  background:url('https://egeraridis.github.io/welcom-bg.jpg') center/cover no-repeat;
   position:relative;
 }
 .welcome-glass{
