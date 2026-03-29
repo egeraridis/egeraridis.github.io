@@ -1,154 +1,203 @@
-:root {
-  --teal: rgb(0,150,150);
-  --indigo: #141b2f;
-  --violet: #50286b;
-  --text-light: #fefefe;
-}
 
-/* ================= GLOBAL ================= */
-*,*::before,*::after{box-sizing:border-box;}
-body{
-  margin:0;
-  color:var(--text-light);
-  font-family:'Inter',sans-serif;
-  background:linear-gradient(270deg,var(--indigo),var(--teal),var(--violet));
-  background-size:600% 600%;
-  animation:gradientFlow 20s ease infinite;
-  overflow-x:hidden;
-}
-@keyframes gradientFlow{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
-}
-h1,h2,h3,h4,h5{font-family:'Poppins',sans-serif;}
-.text-teal{color:var(--teal)!important;}
-hr{border-color:rgba(255,255,255,0.2);}
+  :root {
+    --teal: rgb(0,150,150);
+    --indigo: #141b2f;
+    --violet: #50286b;
+    --text-light: #fefefe;
+  }
 
-/* ================= WELCOME PAGE ================= */
-.welcome-section{
-  height:100vh;
-  background:url('https://egeraridis.github.io/welcom-bg.jpg') center/cover no-repeat;
-  position:relative;
-}
-.welcome-glass{
-  backdrop-filter:blur(14px);
-  background:rgba(255,255,255,0.25);
-  padding:40px 60px;
-  border-radius:20px;
-  border:1px solid rgba(255,255,255,0.4);
-  color:#fff;
-  box-shadow:0 0 40px rgba(0,0,0,0.4);
-  animation:slideUp 1.4s ease forwards;
-}
-.scroll-indicator i{
-  font-size:3rem;
-  color:#fff;
-  text-shadow:0 0 12px rgba(0,0,0,0.8);
-  animation:bounceArrow 2s infinite ease-in-out;
-}
-@keyframes bounceArrow{
-  0%{transform:translateY(0);opacity:0.7;}
-  50%{transform:translateY(12px);opacity:1;}
-  100%{transform:translateY(0);opacity:0.7;}
-}
-@keyframes slideUp{
-  from{transform:translateY(40px);opacity:0;}
-  to{transform:translateY(0);opacity:1;}
-}
+  /* ================= GLOBAL ================= */
+  *,*::before,*::after{box-sizing:border-box;}
+  body{
+    margin:0;
+    color:var(--text-light);
+    font-family:'Inter',sans-serif;
+    background:linear-gradient(270deg,var(--indigo),var(--teal),var(--violet));
+    background-size:600% 600%;
+    animation:gradientFlow 20s ease infinite;
+    overflow-x:hidden;
+  }
+  @keyframes gradientFlow{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
+  h1,h2,h3,h4,h5{font-family:'Poppins',sans-serif;}
+  .text-teal{color:var(--teal)!important;}
+  hr{border-color:rgba(255,255,255,0.2);}
 
-/* ================= NAVBAR ================= */
-.glass-nav{
-  backdrop-filter:blur(12px);
-  background-color:rgba(0,0,0,0.35)!important;
-  box-shadow:0 2px 10px rgba(0,0,0,0.4);
-}
-.nav-link{color:#fff!important;transition:color .3s;}
-.nav-link:hover{color:var(--teal)!important;}
+  /* ================= WELCOME PAGE ================= */
+  .welcome-section{
+    height:100vh;
+    background:url('https://egeraridis.github.io/welcome-bg.jpg') center/cover no-repeat;
+    position:relative;
+  }
 
-/* ================= HERO ================= */
-.hero-glass{
-  backdrop-filter:blur(18px);
-  background-color:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.25);
-  border-radius:16px;
-  max-width:650px;
-  box-shadow:0 0 20px rgba(0,0,0,0.4);
-}
-.hero-img{
-  width:160px;height:160px;border-radius:50%;
-  object-fit:cover;border:3px solid var(--teal);
-}
+  .welcome-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
 
-/* ================= CONTENT ================= */
-.content-section{padding:100px 0;}
-.glass-card{
-  background-color:rgba(255,255,255,0.08);
-  backdrop-filter:blur(14px);
-  border-radius:14px;
-  padding:40px;
-  box-shadow:0 0 25px rgba(0,0,0,0.3);
-  transition:transform .4s,box-shadow .4s;
-}
-.glass-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 0 40px rgba(0,150,150,0.3);
-}
-ul li{margin-bottom:8px;}
-.glass-table{
-  background-color:rgba(0,0,0,0.3);
-  backdrop-filter:blur(8px);
-}
+  .welcome-content {
+    position: relative;
+    z-index: 2;
+  }
 
-/* ================= BUTTONS ================= */
-.btn-glass{
-  position:relative;
-  padding:10px 22px;
-  border-radius:50px;
-  text-decoration:none;
-  color:white;
-  font-weight:600;
-  backdrop-filter:blur(10px);
-  background:rgba(255,255,255,0.1);
-  border:1px solid rgba(255,255,255,0.2);
-  transition:all .4s;
-  overflow:hidden;
-}
-.btn-glass::before{
-  content:"";
-  position:absolute;
-  top:0;left:-75%;
-  width:50%;height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent);
-  transform:skewX(-25deg);
-  transition:all .8s;
-}
-.btn-glass:hover::before{left:125%;}
-.btn-glass:hover{
-  color:var(--teal);
-  border-color:var(--teal);
-  box-shadow:0 0 15px rgba(0,150,150,0.5);
-  transform:translateY(-2px);
-}
+  .welcome-glass{
+    backdrop-filter:blur(14px);
+    background:rgba(255,255,255,0.15);
+    padding:40px 60px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.3);
+    box-shadow:0 0 40px rgba(0,0,0,0.4);
+    animation:slideUp 1.4s ease forwards;
+  }
 
-/* ================= FOOTER ================= */
-footer{
-  background-color:rgba(0,0,0,0.6);
-  backdrop-filter:blur(8px);
-  border-top:1px solid rgba(255,255,255,0.15);
-}
+  .welcome-glass h1,
+  .welcome-glass h3 {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    color: #fff;
+  }
 
-/* ================= RESPONSIVE ================= */
-@media(max-width:768px){
-  .hero-img{width:130px;height:130px;}
-  .glass-card{padding:25px;}
-  h1{font-size:1.9rem;}
-}
- /* ================= WELCOME OVERLAY ================= */
-  body.welcome-active #welcome {
+  .arrows-container {
+    animation: fadeIn 1s ease 1s forwards;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .arrow-bounce {
+    animation: bounceArrow 2s infinite ease-in-out;
+    font-size: 2rem;
+    color: #fff;
+    opacity: 0.9;
+    text-shadow: 0 0 12px rgba(0,0,0,0.8);
+  }
+
+  .text-scroll {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    margin-top: 10px;
+  }
+
+  @keyframes bounceArrow{
+    0%{transform:translateY(0);opacity:0.7;}
+    50%{transform:translateY(12px);opacity:1;}
+    100%{transform:translateY(0);opacity:0.7;}
+  }
+
+  @keyframes slideUp{
+    from{transform:translateY(40px);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ================= NAVBAR ================= */
+  .glass-nav{
+    backdrop-filter:blur(12px);
+    background-color:rgba(0,0,0,0.35)!important;
+    box-shadow:0 2px 10px rgba(0,0,0,0.4);
+  }
+  .nav-link{color:#fff!important;transition:color .3s;}
+  .nav-link:hover{color:var(--teal)!important;}
+
+  /* ================= HERO ================= */
+  .hero-glass{
+    backdrop-filter:blur(18px);
+    background-color:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:16px;
+    max-width:650px;
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
+  }
+  .hero-img{
+    width:160px;height:160px;border-radius:50%;
+    object-fit:cover;border:3px solid var(--teal);
+  }
+
+  /* ================= CONTENT ================= */
+  .content-section{padding:100px 0;}
+  .glass-card{
+    background-color:rgba(255,255,255,0.08);
+    backdrop-filter:blur(14px);
+    border-radius:14px;
+    padding:40px;
+    box-shadow:0 0 25px rgba(0,0,0,0.3);
+    transition:transform .4s,box-shadow .4s;
+  }
+  .glass-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 40px rgba(0,150,150,0.3);
+  }
+  ul li{margin-bottom:8px;}
+  .glass-table{
+    background-color:rgba(0,0,0,0.3);
+    backdrop-filter:blur(8px);
+  }
+
+  /* ================= BUTTONS ================= */
+  .btn-glass{
+    position:relative;
+    padding:10px 22px;
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.2);
+    transition:all .4s;
+    overflow:hidden;
+  }
+  .btn-glass::before{
+    content:"";
+    position:absolute;
+    top:0;left:-75%;
+    width:50%;height:100%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent);
+    transform:skewX(-25deg);
+    transition:all .8s;
+  }
+  .btn-glass:hover::before{left:125%;}
+  .btn-glass:hover{
+    color:var(--teal);
+    border-color:var(--teal);
+    box-shadow:0 0 15px rgba(0,150,150,0.5);
+    transform:translateY(-2px);
+  }
+
+  /* ================= FOOTER ================= */
+  footer{
+    background-color:rgba(0,0,0,0.6);
+    backdrop-filter:blur(8px);
+    border-top:1px solid rgba(255,255,255,0.15);
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media(max-width:768px){
+    .hero-img{width:130px;height:130px;}
+    .glass-card{padding:25px;}
+    h1{font-size:1.9rem;}                      
+  }                                            
+                                                                                                                                                                                                                                          
+  /* ================= WELCOME OVERLAY ================= */                                                                                                                                                                               
+  body.welcome-active #welcome {                                                                                                                                                                                                          
     position: fixed;                                                                                                                                                                                                                      
-    top: 0;                                    
-    left: 0;                                                                                                                                                                                                                              
+    top: 0;                                                                                                                                                                                                                               
+    left: 0;                                   
     width: 100%;                                                                                                                                                                                                                          
     height: 100vh;                                                                                                                                                                                                                        
     z-index: 9999;                                                                                                                                                                                                                        
@@ -157,93 +206,42 @@ footer{
   body.welcome-active #main-content {                                                                                                                                                                                                     
     opacity: 0;                                                                                                                                                                                                                           
     pointer-events: none;                                                                                                                                                                                                                 
+    position: absolute;                                                                                                                                                                                                                   
+    top: 0;                                    
+    left: 0;                                                                                                                                                                                                                              
+    width: 100%;                                                                                                                                                                                                                          
   }                                                                                                                                                                                                                                       
-                                               
+                                                                                                                                                                                                                                          
   body.welcome-dismissed #welcome {                                                                                                                                                                                                       
     opacity: 0;                                                                                                                                                                                                                           
-    pointer-events: none; 
+    pointer-events: none;                
     transition: opacity 0.5s ease;                                                                                                                                                                                                        
-  }                                            
+    position: fixed;                           
+  }                                                                                                                                                                                                                                       
                                                                                                                                                                                                                                           
   body.welcome-dismissed #main-content {                                                                                                                                                                                                  
     opacity: 1;                                                                                                                                                                                                                           
     pointer-events: auto;                                                                                                                                                                                                                 
     transition: opacity 0.5s ease 0.2s;                                                                                                                                                                                                   
-  }                                            
+    position: relative;                                                                                                                                                                                                                   
+    top: 0;                                                                                                                                                                                                                               
+    left: 0;                                   
+  }                                                                                                                                                                                                                                       
                                                                                                                                                                                                                                           
   #welcome {                                                                                                                                                                                                                              
     transition: opacity 0.5s ease;                                                                                                                                                                                                        
-  }                                                                                                                                                                                                                                       
+    margin: 0;                           
+    padding: 0;                                                                                                                                                                                                                           
+  }                                            
                                                                                                                                                                                                                                           
-  body.welcome-active {                  
+  body.welcome-active {                                                                                                                                                                                                                   
     overflow: hidden;                                                                                                                                                                                                                     
-  }
+    position: fixed;                                                                                                                                                                                                                      
+    width: 100%;                                                                                                                                                                                                                          
+  }                                      
                                                                                                                                                                                                                                           
   body.welcome-dismissed {               
     overflow-y: auto;                                                                                                                                                                                                                     
-  }                                      
-                                                                                                                                                                                                                                          
-  /* ================= GREEK ISLAND BACKGROUND ================= */
-  .welcome-section {                                                                                                                                                                                                                      
-    background: url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
-    position: relative;                                                                                                                                                                                                                   
-  }                                            
-                                                                                                                                                                                                                                          
-  .welcome-section::before {                                                                                                                                                                                                              
-    content: '';                                                                                                                                                                                                                          
-    position: absolute;                                                                                                                                                                                                                   
-    top: 0;                                    
-    left: 0;                                                                                                                                                                                                                              
-    right: 0;                                                                                                                                                                                                                             
-    bottom: 0;                                                                                                                                                                                                                            
-    background: rgba(0, 0, 0, 0.4);                                                                                                                                                                                                       
-    z-index: 1;                                                                                                                                                                                                                           
+    position: relative;   
   }                                                                                                                                                                                                                                       
-                                                                                                                                                                                                                                          
-  .welcome-content {                                                                                                                                                                                                                      
-    position: relative;                                                                                                                                                                                                                   
-    z-index: 2;                                                                                                                                                                                                                           
-  }                                                                                                                                                                                                                                       
-                                         
-  .welcome-glass {                                                                                                                                                                                                                        
-    backdrop-filter: blur(14px);               
-    background: rgba(255, 255, 255, 0.15);                                                                                                                                                                                                
-    padding: 40px 60px;                                                                                                                                                                                                                   
-    border-radius: 20px;                       
-    border: 1px solid rgba(255, 255, 255, 0.3);                                                                                                                                                                                           
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);                                                                                                                                                                                              
-    animation: slideUp 1.4s ease forwards;                                                                                                                                                                                                
-  }                                                                                                                                                                                                                                       
-                                                                                                                                                                                                                                          
-  .welcome-glass h1,                                                                                                                                                                                                                      
-  .welcome-glass h3 {                                                                                                                                                                                                                     
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);                                                                                                                                                                                           
-  }                                                                                                                                                                                                                                       
-                                               
-  .arrows-container {                                                                                                                                                                                                                     
-    animation: fadeIn 1s ease 1s forwards;                                                                                                                                                                                                
-    opacity: 0;                                                                                                                                                                                                                           
-  }                                                                                                                                                                                                                                       
-                                               
-  @keyframes fadeIn {                                                                                                                                                                                                                     
-    from { opacity: 0; transform: translateY(20px); }                                                                                                                                                                                     
-    to { opacity: 1; transform: translateY(0); }                                                                                                                                                                                          
-  }                                                                                                                                                                                                                                       
-                                               
-  .arrow-bounce {                                                                                                                                                                                                                         
-    animation: bounceArrow 2s infinite ease-in-out;                                                                                                                                                                                       
-    font-size: 2rem !important;                                                                                                                                                                                                           
-    opacity: 0.9;                                                                                                                                                                                                                         
-  }                                            
-                                                                                                                                                                                                                                          
-  @keyframes bounceArrow {                                                                                                                                                                                                                
-    0%, 100% { transform: translateY(0); opacity: 0.7; }                                                                                                                                                                                  
-    50% { transform: translateY(10px); opacity: 1; }                                                                                                                                                                                      
-  }                                                                                                                                                                                                                                       
-                                               
-  .text-white-50 {                                                                                                                                                                                                                        
-    color: rgba(255, 255, 255, 0.6) !important;                                                                                                                                                                                           
-    font-size: 0.875rem;                                                                                                                                                                                                                  
-    letter-spacing: 1px;                                                                                                                                                                                                                  
-    margin-top: 10px;                                                                                                                                                                                                                     
-  }                                                   
+      
