@@ -1,4 +1,4 @@
- :root {
+  :root {
     --teal: rgb(0,150,150);
     --indigo: #141b2f;
     --violet: #50286b;
@@ -57,6 +57,8 @@
     border:1px solid rgba(255,255,255,0.3);
     box-shadow:0 0 40px rgba(0,0,0,0.4);
     animation:slideUp 1.4s ease forwards;
+    max-width: 90%;
+    margin: 0 auto;
   }
   .welcome-glass h1,
   .welcome-glass h3 {
@@ -115,7 +117,9 @@
     border-radius:16px;
     max-width:650px;
     width: 90%;
+    max-width: 90%;
     box-shadow:0 0 20px rgba(0,0,0,0.4);
+    padding: 30px !important;
   }
   .hero-img{
     width:160px;height:160px;border-radius:50%;
@@ -123,25 +127,38 @@
   }
 
   /* ================= CONTENT ================= */
-  .content-section{padding:100px 0;}
+  .content-section{padding:100px 0 60px;}
   .glass-card{
     background-color:rgba(255,255,255,0.08);
     backdrop-filter:blur(14px);
     border-radius:14px;
-    padding:40px;
+    padding:25px;
     box-shadow:0 0 25px rgba(0,0,0,0.3);
     transition:transform .4s,box-shadow .4s;
     max-width: 100%;
     margin: 0 auto;
+    overflow-wrap: break-word;
   }
   .glass-card:hover{
     transform:translateY(-6px);
     box-shadow:0 0 40px rgba(0,150,150,0.3);
   }
-  ul li{margin-bottom:8px;}
+  ul li{
+    margin-bottom:8px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
   .glass-table{
     background-color:rgba(0,0,0,0.3);
     backdrop-filter:blur(8px);
+    table-layout: fixed;
+    width: 100%;
+  }
+  .glass-table th,
+  .glass-table td {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal !important;
   }
 
   /* ================= BUTTONS ================= */
@@ -157,6 +174,8 @@
     border:1px solid rgba(255,255,255,0.2);
     transition:all .4s;
     overflow:hidden;
+    white-space: nowrap;
+    font-size: 0.9rem;
   }
   .btn-glass::before{
     content:"";
@@ -184,13 +203,25 @@
 
   /* ================= RESPONSIVE ================= */
   @media(max-width:768px){
+    body { font-size: 14px; }
     .hero-img{width:130px;height:130px;}
-    .glass-card{padding:25px;}
-    h1{font-size:1.9rem;}                      
-    .hero-glass { width: 95%; }                
-    .container { padding-left: 10px !important; padding-right: 10px !important; }                                                                                                                                                         
+    .glass-card{padding:20px;}                 
+    .hero-glass{padding:20px !important; width: 95% !important; max-width: 95% !important;}
+    .welcome-glass{padding:30px 20px !important; max-width: 95% !important;}                                                                                                                                                              
+    h1{font-size:1.8rem !important;}                                                                                                                                                                                                      
+    h2{font-size:1.5rem !important;}                                                                                                                                                                                                      
+    .display-4{font-size:1.6rem !important;}                                                                                                                                                                                              
+    .display-5{font-size:1.4rem !important;}                                                                                                                                                                                              
+    .content-section{padding:60px 0 40px;}                                                                                                                                                                                                
+    .container { padding-left: 12px !important; padding-right: 12px !important; }
+    .btn-glass { padding: 8px 16px !important; font-size: 0.85rem !important; }                                                                                                                                                           
   }                                                                                                                                                                                                                                       
                                                                                                                                                                                                                                           
+  @media (max-width: 480px) {                                                                                                                                                                                                             
+    .hero-glass, .glass-card, .welcome-glass { margin: 0 8px; }                                                                                                                                                                           
+    .pb-4, .p-4 { padding-left: 15px !important; padding-right: 15px !important; }                                                                                                                                                        
+  }                                                                                                                                                                                                                                       
+                                               
   /* ================= WELCOME OVERLAY ================= */                                                                                                                                                                               
   body.welcome-active #welcome {                                                                                                                                                                                                          
     position: fixed;                                                                                                                                                                                                                      
@@ -205,10 +236,10 @@
     opacity: 0;                                                                                                                                                                                                                           
     pointer-events: none;                                                                                                                                                                                                                 
   }                                                                                                                                                                                                                                       
-                                               
+                                                                                                                                                                                                                                          
   body.welcome-dismissed #welcome {                                                                                                                                                                                                       
     opacity: 0;                                                                                                                                                                                                                           
-    pointer-events: none;                                                                                                                                                                                                                 
+    pointer-events: none;
     transition: opacity 0.5s ease;                                                                                                                                                                                                        
     position: fixed;                           
   }                                                                                                                                                                                                                                       
@@ -223,119 +254,33 @@
     transition: opacity 0.5s ease;                                                                                                                                                                                                        
     margin: 0;                                                                                                                                                                                                                            
     padding: 0;                                                                                                                                                                                                                           
-  }                                      
+  }                                            
                                                                                                                                                                                                                                           
-  body.welcome-active {   
+  body.welcome-active {                                                                                                                                                                                                                   
     overflow: hidden;                                                                                                                                                                                                                     
-    position: fixed;                     
+    position: fixed;                                                                                                                                                                                                                      
     width: 100%;                                                                                                                                                                                                                          
   }                                            
                                                                                                                                                                                                                                           
   body.welcome-dismissed {                                                                                                                                                                                                                
     overflow-y: auto;                                                                                                                                                                                                                     
     position: relative;                                                                                                                                                                                                                   
-    width: 100%;                               
-  }   
-
- /* ================= EMERGENCY MOBILE FIX ================= */                                                                                                                                                                          
-  * {                                                                                                                                                                                                                                     
-    max-width: 100% !important;                
-  }                                                                                                                                                                                                                                       
-                                                                                                                                                                                                                                          
-  body {                                                                                                                                                                                                                                  
-    overflow-x: hidden !important;                                                                                                                                                                                                        
+    width: 100%;                                                                                                                                                                                                                          
   }                                      
                                                                                                                                                                                                                                           
-  #main-content {                        
-    overflow-x: hidden !important;                                                                                                                                                                                                        
-    width: 100% !important;              
-  }                                                                                                                                                                                                                                       
-                                               
-  .container {                                                                                                                                                                                                                            
-    max-width: 100vw !important;                                                                                                                                                                                                          
-    overflow-x: hidden !important;                                                                                                                                                                                                        
-    padding-left: 10px !important;                                                                                                                                                                                                        
-    padding-right: 10px !important;            
-  }                                                                                                                                                                                                                                       
-                                                                                                                                                                                                                                          
-  .glass-card {                                                                                                                                                                                                                           
-    max-width: 100vw !important;                                                                                                                                                                                                          
-    overflow-x: hidden !important;                                                                                                                                                                                                        
-    word-break: break-word !important;                                                                                                                                                                                                    
-    hyphens: auto !important;                  
-  }                                                                                                                                                                                                                                       
-                                                                                                                                                                                                                                          
-  .hero-glass {                                                                                                                                                                                                                           
-    max-width: 95vw !important;                                                                                                                                                                                                           
-    width: 95vw !important;                                                                                                                                                                                                               
-    overflow-x: hidden !important;                                                                                                                                                                                                        
-  }                                            
-                                                                                                                                                                                                                                          
-  /* Force break long unbroken text */                                                                                                                                                                                                    
-  p, li, td, th {                                                                                                                                                                                                                         
-    word-wrap: break-word !important;                                                                                                                                                                                                     
-    overflow-wrap: break-word !important;                                                                                                                                                                                                 
-    word-break: break-word !important;         
-  }                                                                                                                                                                                                                                       
-                                                                                                                                                                                                                                          
-  /* Special case for the long strings in your content */
-  .glass-card {                                                                                                                                                                                                                           
-    overflow-wrap: anywhere !important;  
-  }
-
- /* ================= TEXT WRAPPING FIXES ================= */                                                                                                                                                                           
-                                                                                                                                                                                                                                          
-  /* Ensure all text wraps properly */         
-  p, li, h1, h2, h3, h4, h5, h6, .text-light, .text-white {                                                                                                                                                                               
+  /* Force text to wrap and prevent overflow */
+  p, li, a, span, div, h1, h2, h3, h4, h5, h6 {                                                                                                                                                                                           
     word-wrap: break-word !important;                                                                                                                                                                                                     
     overflow-wrap: break-word !important;                                                                                                                                                                                                 
     word-break: break-word !important;                                                                                                                                                                                                    
     hyphens: auto !important;                                                                                                                                                                                                             
   }                                                                                                                                                                                                                                       
                                                                                                                                                                                                                                           
-  /* Fix long URLs and unbroken text */                                                                                                                                                                                                   
-  .glass-card {                                                                                                                                                                                                                           
+  /* Container constraints */                                                                                                                                                                                                             
+  .container,                                                                                                                                                                                                                             
+  .glass-card,                                                                                                                                                                                                                            
+  .hero-glass,                                                                                                                                                                                                                            
+  .welcome-glass {
     word-break: break-word !important;                                                                                                                                                                                                    
-    overflow-wrap: anywhere !important;                                                                                                                                                                                                   
+    overflow-wrap: anywhere !important;        
   }                                            
-                                                                                                                                                                                                                                          
-  .hero-glass {                                                                                                                                                                                                                           
-    word-break: break-word !important;                                                                                                                                                                                                    
-    overflow-wrap: anywhere !important;                                                                                                                                                                                                   
-  }                                                                                                                                                                                                                                       
-                                               
-  /* Specific fix for the hero section paragraph */                                                                                                                                                                                       
-  #home .text-light {                                                                                                                                                                                                                     
-    line-height: 1.6;                                                                                                                                                                                                                     
-    word-break: break-word;                                                                                                                                                                                                               
-  }                                            
-                                                                                                                                                                                                                                          
-  /* Ensure tables don't overflow */                                                                                                                                                                                                      
-  .table {                                                                                                                                                                                                                                
-    table-layout: fixed !important;                                                                                                                                                                                                       
-    width: 100% !important;                                                                                                                                                                                                               
-    word-wrap: break-word !important;          
-  }                                                                                                                                                                                                                                       
-                                                                                                                                                                                                                                          
-  .table td, .table th {                                                                                                                                                                                                                  
-    word-break: break-word !important;                                                                                                                                                                                                    
-    overflow-wrap: break-word !important;                                                                                                                                                                                                 
-    white-space: normal !important;                                                                                                                                                                                                       
-  }                                                                                                                                                                                                                                       
-                                                                                                                                                                                                                                          
-  /* Adjust font sizes for very small screens */                                                                                                                                                                                          
-  @media (max-width: 480px) {                                                                                                                                                                                                             
-    .display-4 { font-size: 1.5rem !important; }                                                                                                                                                                                          
-    .display-5 { font-size: 1.3rem !important; }                                                                                                                                                                                          
-    .hero-glass p, .glass-card p {             
-      font-size: 0.95rem !important;                                                                                                                                                                                                      
-      line-height: 1.5 !important;                                                                                                                                                                                                        
-    }                                                                                                                                                                                                                                     
-                                                                                                                                                                                                                                          
-    /* Reduce padding on tiny screens */                                                                                                                                                                                                  
-    .glass-card, .hero-glass, .welcome-glass {                                                                                                                                                                                            
-      padding-left: 20px !important;                                                                                                                                                                                                      
-      padding-right: 20px !important;                                                                                                                                                                                                     
-    }                                                                                                                                                                                                                                     
-  }     
-                                   
